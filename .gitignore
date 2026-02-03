@@ -1,1 +1,4 @@
 node_modules/
+
+# Firebase config (contains API key) — copy config.example.js to config.js and fill in your values
+config.js

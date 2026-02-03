@@ -26,7 +26,8 @@ To enable sign-in and saved categories:
 1. Create a project at [Firebase Console](https://console.firebase.google.com)
 2. Enable **Authentication** → Sign-in method → **Email/Password**
 3. Create a **Firestore Database** (start in test mode or set rules as below)
-4. In Project settings → Your apps, add a web app and copy the config into `config.js` (replace the `YOUR_*` placeholders)
+4. Copy the config template and add your keys: **`cp config.example.js config.js`**, then edit `config.js` with your project values from Project settings → Your apps. **`config.js` is gitignored** so your API key is never committed.
+5. In **Google Cloud Console → APIs & Services → Credentials**, open your API key and add **Application restrictions** (e.g. HTTP referrers for your domain) and **API restrictions** (e.g. restrict to Firebase APIs) to limit abuse.
 
 Firestore rules for user categories (each user can only read/write their own):
 
