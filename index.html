@@ -11,17 +11,43 @@
 </head>
 <body>
   <div class="app">
+    <!-- Auth header (shown when signed in) -->
+    <header class="auth-header" id="auth-header" style="display: none;">
+      <span class="auth-email" id="auth-email"></span>
+      <button type="button" class="btn btn-small btn-ghost" id="sign-out-btn">Sign out</button>
+    </header>
+
     <!-- Home / Mode selection -->
     <section id="screen-home" class="screen active">
       <div class="hero">
         <h1 class="title">Imposter</h1>
         <p class="tagline">One word. One imposter. Find them.</p>
       </div>
+      <div class="auth-buttons" id="auth-buttons">
+        <button type="button" class="btn btn-secondary btn-full" id="sign-in-btn">Sign in to save your categories</button>
+      </div>
       <div class="mode-buttons">
         <button type="button" class="btn btn-primary" data-mode="preset">Play with preset categories</button>
         <button type="button" class="btn btn-secondary" data-mode="custom">Create your own category</button>
       </div>
     </section>
+
+    <!-- Sign in / Sign up modal -->
+    <div class="auth-modal" id="auth-modal">
+      <div class="auth-modal-content">
+        <h2 id="auth-modal-title">Sign in</h2>
+        <form id="auth-form">
+          <input type="email" id="auth-email-input" placeholder="Email" required autocomplete="email" />
+          <input type="password" id="auth-password-input" placeholder="Password" required autocomplete="current-password" />
+          <p class="auth-error" id="auth-error"></p>
+          <button type="submit" class="btn btn-primary btn-full" id="auth-submit-btn">Sign in</button>
+        </form>
+        <p class="auth-toggle">
+          <button type="button" class="btn-link" id="auth-toggle-mode">Create an account</button>
+        </p>
+        <button type="button" class="auth-close" id="auth-close" aria-label="Close">×</button>
+      </div>
+    </div>
 
     <!-- Preset category selection -->
     <section id="screen-presets" class="screen">
@@ -30,10 +56,16 @@
       <div id="preset-list" class="category-grid"></div>
     </section>
 
-    <!-- Custom category: create & add words -->
+    <!-- Custom category: saved list + create new -->
     <section id="screen-custom" class="screen">
       <button type="button" class="back-btn" aria-label="Back">← Back</button>
-      <h2>Your category</h2>
+      <h2>Your categories</h2>
+      <div id="saved-categories-block" class="saved-categories" style="display: none;">
+        <p class="saved-label">Saved categories</p>
+        <div id="saved-categories-list" class="category-grid"></div>
+        <hr class="divider" />
+      </div>
+      <p class="section-label">Create new category</p>
       <div class="custom-form">
         <label for="custom-name">Category name</label>
         <input type="text" id="custom-name" placeholder="e.g. Superheroes" maxlength="40" />
@@ -89,6 +121,10 @@
       </div>
     </section>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
