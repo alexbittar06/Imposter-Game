@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imposter Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Home / Mode selection -->
+    <section id="screen-home" class="screen active">
+      <div class="hero">
+        <h1 class="title">Imposter</h1>
+        <p class="tagline">One word. One imposter. Find them.</p>
+      </div>
+      <div class="mode-buttons">
+        <button type="button" class="btn btn-primary" data-mode="preset">Play with preset categories</button>
+        <button type="button" class="btn btn-secondary" data-mode="custom">Create your own category</button>
+      </div>
+    </section>
+
+    <!-- Preset category selection -->
+    <section id="screen-presets" class="screen">
+      <button type="button" class="back-btn" aria-label="Back">← Back</button>
+      <h2>Choose a category</h2>
+      <div id="preset-list" class="category-grid"></div>
+    </section>
+
+    <!-- Custom category: create & add words -->
+    <section id="screen-custom" class="screen">
+      <button type="button" class="back-btn" aria-label="Back">← Back</button>
+      <h2>Your category</h2>
+      <div class="custom-form">
+        <label for="custom-name">Category name</label>
+        <input type="text" id="custom-name" placeholder="e.g. Superheroes" maxlength="40" />
+        <label>Words <span class="hint">(add at least 4)</span></label>
+        <div class="word-input-row">
+          <input type="text" id="custom-word" placeholder="Add a word" maxlength="30" />
+          <button type="button" class="btn btn-add" id="add-word-btn">Add</button>
+        </div>
+        <ul id="custom-words-list" class="words-list"></ul>
+        <button type="button" class="btn btn-primary btn-full" id="start-custom-btn" disabled>Start game</button>
+      </div>
+    </section>
+
+    <!-- Player count -->
+    <section id="screen-players" class="screen">
+      <button type="button" class="back-btn" aria-label="Back">← Back</button>
+      <h2>How many players?</h2>
+      <div class="player-select">
+        <input type="range" id="player-count" min="3" max="12" value="4" />
+        <span id="player-count-display">4</span> players
+      </div>
+      <button type="button" class="btn btn-primary btn-full" id="start-game-btn">Start round</button>
+    </section>
+
+    <!-- Pass device / show word -->
+    <section id="screen-word" class="screen">
+      <p class="instruction">Pass the device to <span id="current-player-name">Player 1</span></p>
+      <button type="button" class="btn btn-primary btn-full" id="show-word-btn">Show my word</button>
+    </section>
+
+    <!-- Word reveal (hidden until tapped) -->
+    <section id="screen-reveal" class="screen">
+      <p class="role-label" id="role-label">Your word</p>
+      <p class="word-display" id="word-display">—</p>
+      <button type="button" class="btn btn-secondary btn-full" id="done-reading-btn">I've read it</button>
+    </section>
+
+    <!-- Voting -->
+    <section id="screen-vote" class="screen">
+      <h2>Who is the imposter?</h2>
+      <p class="vote-hint">Tap to vote. Majority wins.</p>
+      <div id="vote-list" class="vote-list"></div>
+      <button type="button" class="btn btn-primary btn-full" id="reveal-imposter-btn">Reveal imposter</button>
+    </section>
+
+    <!-- Results -->
+    <section id="screen-results" class="screen">
+      <h2 id="results-title">Imposter was…</h2>
+      <p class="imposter-name" id="imposter-name">—</p>
+      <div class="results-actions">
+        <button type="button" class="btn btn-primary" id="play-again-btn">Play again</button>
+        <button type="button" class="btn btn-secondary" id="new-category-btn">New category</button>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
