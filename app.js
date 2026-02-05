@@ -17,16 +17,116 @@ if (FIREBASE_ENABLED) {
 }
 
 const PRESETS = [
-  { name: 'Animals', words: ['Dog', 'Cat', 'Lion', 'Elephant', 'Penguin', 'Dolphin', 'Owl', 'Bear'] },
-  { name: 'Food & Drink', words: ['Pizza', 'Sushi', 'Coffee', 'Taco', 'Ice Cream', 'Burger', 'Pasta', 'Smoothie'] },
-  { name: 'Movies', words: ['Star Wars', 'Titanic', 'Inception', 'Frozen', 'Jaws', 'Matrix', 'Avatar', 'Toy Story'] },
-  { name: 'Sports', words: ['Soccer', 'Basketball', 'Tennis', 'Swimming', 'Surfing', 'Skiing', 'Boxing', 'Golf'] },
-  { name: 'Jobs', words: ['Doctor', 'Teacher', 'Chef', 'Pilot', 'Artist', 'Engineer', 'Farmer', 'Musician'] },
-  { name: 'Countries', words: ['Japan', 'Brazil', 'Italy', 'Egypt', 'Canada', 'Australia', 'India', 'France'] },
-  { name: 'Superheroes', words: ['Batman', 'Superman', 'Wonder Woman', 'Spider-Man', 'Iron Man', 'Thor', 'Black Widow', 'Hulk'] },
-  { name: 'Music', words: ['Guitar', 'Piano', 'Drums', 'Violin', 'Microphone', 'Concert', 'Album', 'DJ'] },
-  { name: 'Nature', words: ['Mountain', 'Ocean', 'Forest', 'Desert', 'Waterfall', 'Sunset', 'Rainbow', 'Volcano'] },
-  { name: 'Tech', words: ['Phone', 'Laptop', 'Robot', 'App', 'WiFi', 'Drone', 'VR', 'AI'] },
+  {
+    name: 'Animals',
+    words: [
+      'Dog', 'Cat', 'Lion', 'Elephant', 'Penguin', 'Dolphin', 'Owl', 'Bear',
+      'Tiger', 'Giraffe', 'Kangaroo', 'Panda', 'Zebra', 'Wolf', 'Fox', 'Rabbit',
+      'Horse', 'Cow', 'Sheep', 'Goat', 'Pig', 'Chicken', 'Duck', 'Eagle'
+    ]
+  },
+  {
+    name: 'Food & Drink',
+    words: [
+      'Pizza', 'Sushi', 'Coffee', 'Taco', 'Ice Cream', 'Burger', 'Pasta', 'Smoothie',
+      'Steak', 'Salad', 'Sandwich', 'Fries', 'Ramen', 'Pancakes', 'Donut', 'Tea',
+      'Nachos', 'Burrito', 'Curry', 'Soup', 'Cake', 'Pie', 'Chocolate', 'Milkshake'
+    ]
+  },
+  {
+    name: 'Movies',
+    words: [
+      'Star Wars', 'Titanic', 'Inception', 'Frozen', 'Jaws', 'Matrix', 'Avatar', 'Toy Story',
+      'Jurassic Park', 'The Godfather', 'Harry Potter', 'Lord of the Rings',
+      'Avengers', 'Gladiator', 'Shrek', 'Interstellar',
+      'Dark Knight', 'Forrest Gump', 'Pulp Fiction', 'Rocky', 'Alien', 'Up', 'Coco', 'Dune'
+    ]
+  },
+  {
+    name: 'Sports',
+    words: [
+      'Soccer', 'Basketball', 'Tennis', 'Swimming', 'Surfing', 'Skiing', 'Boxing', 'Golf',
+      'Baseball', 'Football', 'Hockey', 'Volleyball', 'Running', 'Cycling',
+      'Wrestling', 'Cricket', 'Rugby', 'Skateboarding', 'Snowboarding', 'MMA',
+      'Lacrosse', 'Badminton', 'Rowing', 'Fencing'
+    ]
+  },
+  {
+    name: 'Jobs',
+    words: [
+      'Doctor', 'Teacher', 'Chef', 'Pilot', 'Artist', 'Engineer', 'Farmer', 'Musician',
+      'Lawyer', 'Nurse', 'Firefighter', 'Police Officer', 'Scientist', 'Architect',
+      'Journalist', 'Photographer', 'Dentist', 'Therapist', 'Electrician', 'Plumber',
+      'Mechanic', 'Designer', 'Producer', 'Consultant'
+    ]
+  },
+  {
+    name: 'Countries',
+    words: [
+      'Japan', 'Brazil', 'Italy', 'Egypt', 'Canada', 'Australia', 'India', 'France',
+      'Germany', 'Spain', 'Mexico', 'China', 'South Korea', 'Nigeria',
+      'Argentina', 'United Kingdom', 'Sweden', 'Norway', 'Greece', 'Turkey',
+      'Thailand', 'Vietnam', 'Chile', 'Peru'
+    ]
+  },
+  {
+    name: 'Superheroes',
+    words: [
+      'Batman', 'Superman', 'Wonder Woman', 'Spider-Man', 'Iron Man', 'Thor', 'Black Widow', 'Hulk',
+      'Captain America', 'Flash', 'Aquaman', 'Green Lantern',
+      'Doctor Strange', 'Black Panther', 'Scarlet Witch', 'Ant-Man',
+      'Wolverine', 'Deadpool', 'Daredevil', 'Punisher', 'Storm', 'Cyclops', 'Loki', 'Vision'
+    ]
+  },
+  {
+    name: 'Music',
+    words: [
+      'Guitar', 'Piano', 'Drums', 'Violin', 'Microphone', 'Concert', 'Album', 'DJ',
+      'Singer', 'Band', 'Lyrics', 'Melody', 'Bass', 'Headphones',
+      'Playlist', 'Record', 'Producer', 'Remix', 'Encore', 'Festival',
+      'Stage', 'Tour', 'Chord', 'Beat'
+    ]
+  },
+  {
+    name: 'Nature',
+    words: [
+      'Mountain', 'Ocean', 'Forest', 'Desert', 'Waterfall', 'Sunset', 'Rainbow', 'Volcano',
+      'River', 'Lake', 'Canyon', 'Glacier', 'Island', 'Beach',
+      'Thunderstorm', 'Aurora', 'Tornado', 'Hurricane', 'Earthquake',
+      'Cliff', 'Valley', 'Swamp', 'Reef', 'Savanna'
+    ]
+  },
+  {
+    name: 'Tech',
+    words: [
+      'Phone', 'Laptop', 'Robot', 'App', 'WiFi', 'Drone', 'VR', 'AI',
+      'Tablet', 'Smartwatch', 'Server', 'Cloud', 'Bluetooth',
+      'Keyboard', 'Monitor', 'Microchip', 'Firewall', 'Database',
+      'API', 'Algorithm', 'Startup', 'Bug', 'Patch', 'Browser'
+    ]
+  },
+  {
+    name: 'NSFW Adult',
+    words: [
+      'Hookup', 'One-Night Stand', 'Friends with Benefits', 'Thirst Trap',
+      'Nudes', 'Late-Night Text', 'Sneaky Link', 'Booty Call',
+      'Foreplay', 'Kinky', 'Turn-On', 'Turn-Off',
+      'Fantasy', 'Roleplay', 'Dirty Talk', 'After Dark',
+      'Make Out', 'Bedroom Eyes', 'Flirting', 'Chemistry',
+      'Walk of Shame', 'Cuffed', 'Uncuffed', 'Hot Mess'
+    ]
+  },
+  {
+    name: 'Dating Chaos',
+    words: [
+      'Ghosted', 'Breadcrumbing', 'Love Bombing', 'Red Flag',
+      'Green Flag', 'Situationship', 'Soft Launch', 'Hard Launch',
+      'Ex Drama', 'Rebound', 'Drunk Text', 'Read Receipts',
+      'Left on Seen', 'Toxic', 'Clingy', 'Emotionally Unavailable',
+      'Jealous', 'Overthinking', 'Mixed Signals', 'Third Date Rule',
+      'Netflix and Chill', 'Awkward Silence', 'Spicy Text', 'Heartbreak'
+    ]
+  }
 ];
 
 const MIN_WORDS = 4;
@@ -42,6 +142,7 @@ let state = {
   wordsThisRound: [],   // shuffled words for this round
   imposterIndex: -1,    // index among players who got a word (0 = same word, 1 = imposter)
   votedFor: null,      // player index that was voted
+  firstSpeakerIndex: null,  // random player who goes first in discussion (set when entering vote)
 };
 
 const screens = {
@@ -102,12 +203,15 @@ function initAuth() {
   }
   const authHeader = document.getElementById('auth-header');
   const authButtons = document.getElementById('auth-buttons');
-  const authEmail = document.getElementById('auth-email');
+  const authDisplay = document.getElementById('auth-display');
   const signInBtn = document.getElementById('sign-in-btn');
   const signOutBtn = document.getElementById('sign-out-btn');
+  const deleteAccountBtn = document.getElementById('delete-account-btn');
   const authModal = document.getElementById('auth-modal');
   const authForm = document.getElementById('auth-form');
   const authModalTitle = document.getElementById('auth-modal-title');
+  const authNameRow = document.getElementById('auth-name-row');
+  const authNameInput = document.getElementById('auth-name-input');
   const authEmailInput = document.getElementById('auth-email-input');
   const authPasswordInput = document.getElementById('auth-password-input');
   const authError = document.getElementById('auth-error');
@@ -115,16 +219,28 @@ function initAuth() {
   const authToggleMode = document.getElementById('auth-toggle-mode');
   const authClose = document.getElementById('auth-close');
 
+  const deleteAccountModal = document.getElementById('delete-account-modal');
+  const deleteAccountPassword = document.getElementById('delete-account-password');
+  const deleteAccountError = document.getElementById('delete-account-error');
+  const deleteAccountCancel = document.getElementById('delete-account-cancel');
+  const deleteAccountConfirm = document.getElementById('delete-account-confirm');
+  const deleteAccountClose = document.getElementById('delete-account-close');
+
   let isSignUp = false;
+
+  function displayNameForUser(user) {
+    const name = user.displayName && user.displayName.trim();
+    return name ? name : user.email;
+  }
 
   auth.onAuthStateChanged((user) => {
     if (user) {
       authHeader.style.display = 'flex';
-      authEmail.textContent = user.email;
+      authDisplay.textContent = displayNameForUser(user);
       authButtons.style.display = 'none';
     } else {
       authHeader.style.display = 'none';
-      authEmail.textContent = '';
+      authDisplay.textContent = '';
       authButtons.style.display = 'block';
     }
   });
@@ -134,11 +250,53 @@ function initAuth() {
     authModalTitle.textContent = 'Sign in';
     authSubmitBtn.textContent = 'Sign in';
     authToggleMode.textContent = 'Create an account';
+    authNameRow.style.display = 'none';
+    authNameInput.removeAttribute('required');
     authError.textContent = '';
     authModal.classList.add('open');
   });
 
   signOutBtn.addEventListener('click', () => auth.signOut());
+
+  deleteAccountBtn.addEventListener('click', () => {
+    deleteAccountError.textContent = '';
+    deleteAccountPassword.value = '';
+    deleteAccountModal.classList.add('open');
+  });
+
+  deleteAccountCancel.addEventListener('click', () => deleteAccountModal.classList.remove('open'));
+  deleteAccountClose.addEventListener('click', () => deleteAccountModal.classList.remove('open'));
+  deleteAccountModal.addEventListener('click', (e) => {
+    if (e.target === deleteAccountModal) deleteAccountModal.classList.remove('open');
+  });
+
+  deleteAccountConfirm.addEventListener('click', async () => {
+    const user = auth.currentUser;
+    if (!user || !user.email) return;
+    const password = deleteAccountPassword.value;
+    if (!password) {
+      deleteAccountError.textContent = 'Enter your password to confirm';
+      return;
+    }
+    deleteAccountError.textContent = '';
+    deleteAccountConfirm.disabled = true;
+    try {
+      const credential = firebase.auth.EmailAuthProvider.credential(user.email, password);
+      await user.reauthenticateWithCredential(credential);
+      const ref = userCategoriesRef();
+      if (ref) {
+        const snap = await ref.get();
+        const batch = db.batch();
+        snap.docs.forEach((d) => batch.delete(d.ref));
+        if (!snap.empty) await batch.commit();
+      }
+      await user.delete();
+      deleteAccountModal.classList.remove('open');
+    } catch (err) {
+      deleteAccountError.textContent = err.message || 'Could not delete account';
+    }
+    deleteAccountConfirm.disabled = false;
+  });
 
   authClose.addEventListener('click', () => authModal.classList.remove('open'));
   authModal.addEventListener('click', (e) => {
@@ -150,6 +308,8 @@ function initAuth() {
     authModalTitle.textContent = isSignUp ? 'Create account' : 'Sign in';
     authSubmitBtn.textContent = isSignUp ? 'Create account' : 'Sign in';
     authToggleMode.textContent = isSignUp ? 'Already have an account? Sign in' : 'Create an account';
+    authNameRow.style.display = isSignUp ? 'block' : 'none';
+    authNameInput.required = isSignUp;
     authError.textContent = '';
   });
 
@@ -159,10 +319,21 @@ function initAuth() {
     const email = authEmailInput.value.trim();
     const password = authPasswordInput.value;
     if (!email || !password) return;
+    if (isSignUp) {
+      const name = authNameInput.value.trim();
+      if (!name) {
+        authError.textContent = 'Please enter your name';
+        return;
+      }
+    }
     authSubmitBtn.disabled = true;
     try {
       if (isSignUp) {
-        await auth.createUserWithEmailAndPassword(email, password);
+        const name = authNameInput.value.trim();
+        const userCred = await auth.createUserWithEmailAndPassword(email, password);
+        if (userCred.user && name) {
+          await userCred.user.updateProfile({ displayName: name });
+        }
       } else {
         await auth.signInWithEmailAndPassword(email, password);
       }
@@ -318,26 +489,54 @@ function initCustomScreen() {
   };
 }
 
-// ----- Player count -----
+// ----- Player count & names -----
 function initPlayerSection() {
-  const range = document.getElementById('player-count');
-  const display = document.getElementById('player-count-display');
-  range.min = MIN_PLAYERS;
-  range.max = MAX_PLAYERS;
-  range.value = state.playerCount;
-  display.textContent = state.playerCount;
-  range.addEventListener('input', () => {
-    state.playerCount = parseInt(range.value, 10);
-    display.textContent = state.playerCount;
-  });
+  const select = document.getElementById('player-count');
+  const namesList = document.getElementById('player-names-list');
+  select.value = String(state.playerCount);
+
+  function renderPlayerNameInputs() {
+    const count = parseInt(select.value, 10);
+    state.playerCount = count;
+    namesList.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+      const row = document.createElement('div');
+      row.className = 'player-name-row';
+      const label = document.createElement('label');
+      label.textContent = `Player ${i + 1}`;
+      label.htmlFor = `player-name-${i}`;
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.id = `player-name-${i}`;
+      input.placeholder = `Player ${i + 1}`;
+      input.maxLength = 25;
+      input.setAttribute('aria-label', `Name for player ${i + 1}`);
+      row.appendChild(label);
+      row.appendChild(input);
+      namesList.appendChild(row);
+    }
+  }
+
+  renderPlayerNameInputs();
+  select.addEventListener('change', renderPlayerNameInputs);
   document.getElementById('start-game-btn').onclick = startRound;
+}
+
+function getPlayerNamesFromInputs() {
+  const names = [];
+  for (let i = 0; i < state.playerCount; i++) {
+    const input = document.getElementById(`player-name-${i}`);
+    const value = input ? input.value.trim() : '';
+    names.push(value || `Player ${i + 1}`);
+  }
+  return names;
 }
 
 function startRound() {
   const cat = getCurrentCategory();
   if (!cat || cat.words.length < 2) return;
 
-  state.playerNames = Array.from({ length: state.playerCount }, (_, i) => `Player ${i + 1}`);
+  state.playerNames = getPlayerNamesFromInputs();
   state.currentPlayerIndex = 0;
   state.votedFor = null;
 
@@ -381,12 +580,23 @@ function doneReading() {
     showScreen('screen-word');
     updateWordScreenPlayer();
   } else {
+    state.firstSpeakerIndex = Math.floor(Math.random() * state.playerCount);
     showScreen('screen-vote');
     renderVote();
   }
 }
 
 function renderVote() {
+  const firstSpeakerEl = document.getElementById('vote-first-speaker');
+  const firstIndex = state.firstSpeakerIndex;
+  if (firstSpeakerEl && firstIndex != null && state.playerNames[firstIndex]) {
+    const name = state.playerNames[firstIndex];
+    firstSpeakerEl.textContent = `${name} goes first. Take turns going clockwise from them.`;
+    firstSpeakerEl.style.display = 'block';
+  } else if (firstSpeakerEl) {
+    firstSpeakerEl.style.display = 'none';
+  }
+
   const list = document.getElementById('vote-list');
   list.innerHTML = '';
   state.playerNames.forEach((name, i) => {

@@ -13,8 +13,9 @@
   <div class="app">
     <!-- Auth header (shown when signed in) -->
     <header class="auth-header" id="auth-header" style="display: none;">
-      <span class="auth-email" id="auth-email"></span>
+      <span class="auth-display" id="auth-display"></span>
       <button type="button" class="btn btn-small btn-ghost" id="sign-out-btn">Sign out</button>
+      <button type="button" class="btn btn-small btn-ghost btn-danger-ghost" id="delete-account-btn">Delete account</button>
     </header>
 
     <!-- Home / Mode selection -->
@@ -37,6 +38,10 @@
       <div class="auth-modal-content">
         <h2 id="auth-modal-title">Sign in</h2>
         <form id="auth-form">
+          <div class="auth-name-row" id="auth-name-row" style="display: none;">
+            <label for="auth-name-input">Your name</label>
+            <input type="text" id="auth-name-input" placeholder="e.g. Alex" autocomplete="name" maxlength="50" />
+          </div>
           <input type="email" id="auth-email-input" placeholder="Email" required autocomplete="email" />
           <input type="password" id="auth-password-input" placeholder="Password" required autocomplete="current-password" />
           <p class="auth-error" id="auth-error"></p>
@@ -46,6 +51,22 @@
           <button type="button" class="btn-link" id="auth-toggle-mode">Create an account</button>
         </p>
         <button type="button" class="auth-close" id="auth-close" aria-label="Close">×</button>
+      </div>
+    </div>
+
+    <!-- Delete account confirmation modal -->
+    <div class="auth-modal" id="delete-account-modal">
+      <div class="auth-modal-content">
+        <h2>Delete account</h2>
+        <p class="auth-delete-warning">This will permanently delete your account and all saved categories. This cannot be undone.</p>
+        <label for="delete-account-password">Enter your password to confirm</label>
+        <input type="password" id="delete-account-password" placeholder="Password" autocomplete="current-password" />
+        <p class="auth-error" id="delete-account-error"></p>
+        <div class="auth-delete-actions">
+          <button type="button" class="btn btn-secondary" id="delete-account-cancel">Cancel</button>
+          <button type="button" class="btn btn-danger" id="delete-account-confirm">Delete my account</button>
+        </div>
+        <button type="button" class="auth-close" id="delete-account-close" aria-label="Close">×</button>
       </div>
     </div>
 
@@ -79,13 +100,28 @@
       </div>
     </section>
 
-    <!-- Player count -->
+    <!-- Player count & names -->
     <section id="screen-players" class="screen">
       <button type="button" class="back-btn" aria-label="Back">← Back</button>
       <h2>How many players?</h2>
       <div class="player-select">
-        <input type="range" id="player-count" min="3" max="12" value="4" />
-        <span id="player-count-display">4</span> players
+        <label for="player-count">Number of players</label>
+        <select id="player-count" aria-label="Number of players">
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      </div>
+      <div class="player-names-block">
+        <p class="section-label">Player names</p>
+        <div id="player-names-list" class="player-names-list"></div>
       </div>
       <button type="button" class="btn btn-primary btn-full" id="start-game-btn">Start round</button>
     </section>
@@ -106,6 +142,7 @@
     <!-- Voting -->
     <section id="screen-vote" class="screen">
       <h2>Who is the imposter?</h2>
+      <p class="vote-first-speaker" id="vote-first-speaker" style="display: none;"></p>
       <p class="vote-hint">Tap to vote. Majority wins.</p>
       <div id="vote-list" class="vote-list"></div>
       <button type="button" class="btn btn-primary btn-full" id="reveal-imposter-btn">Reveal imposter</button>
