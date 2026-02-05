@@ -4,7 +4,7 @@ A web version of the popular Imposter game: one word, one imposter, find them. P
 
 ## Features
 
-- **Preset categories** — Animals, Food & Drink, Movies, Sports, Jobs, Countries, Superheroes, Music, Nature, Tech
+- **Preset categories** — Catagories to play if you do not wish to create your own 
 - **Custom categories** — Create categories and add your own words (min 4)
 - **Imposter sees "Imposter" in red** — The imposter gets the word "Imposter" (styled in red), not a different word; everyone else sees the real category word
 - **Auth & saved categories** — Sign in with email/password (Firebase) to save custom categories and load them next time
